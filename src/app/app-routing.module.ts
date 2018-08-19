@@ -4,7 +4,7 @@ import { HomeComponent } from './common/home/home.component';
 import { SignInComponent } from './common/sign-in/sign-in.component';
 import { SignUpComponent } from './common/sign-up/sign-up.component';
 import { TeamsComponent } from './teams/teams.component';
-import { TeamComponent } from './team/team.component';
+import { PlayersComponent } from './players/players.component';
 
 const routes: Routes = [
   {
@@ -24,8 +24,8 @@ const routes: Routes = [
     component: TeamsComponent
   },
   {
-    path: 'team',
-    component: TeamComponent
+    path: 'players',
+    component: PlayersComponent
   }
 ];
 

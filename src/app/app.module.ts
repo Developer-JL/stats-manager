@@ -10,6 +10,8 @@ import { SignInComponent } from './common/sign-in/sign-in.component';
 import { SignUpComponent } from './common/sign-up/sign-up.component';
 import { TeamsComponent } from './teams/teams.component';
 import { TeamComponent } from './team/team.component';
+import { PlayerComponent } from './player/player.component';
+import { PlayersComponent } from './players/players.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { TeamComponent } from './team/team.component';
     SignInComponent,
     SignUpComponent,
     TeamsComponent,
-    TeamComponent
+    TeamComponent,
+    PlayerComponent,
+    PlayersComponent
   ],
   imports: [
     BrowserModule,

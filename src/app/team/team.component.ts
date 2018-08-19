@@ -14,7 +14,7 @@ export class TeamComponent implements OnInit {
   }
 
   public teamClick(): void {
-    this.router.navigate(['/']); 
+    this.router.navigate(['/players']); 
   }
 
 }

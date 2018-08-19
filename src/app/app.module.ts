@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './common/home/home.component';
 import { SignInComponent } from './common/sign-in/sign-in.component';
 import { SignUpComponent } from './common/sign-up/sign-up.component';
+import { TeamsComponent } from './teams/teams.component';
+import { TeamComponent } from './team/team.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { SignUpComponent } from './common/sign-up/sign-up.component';
     FooterComponent,
     HomeComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    TeamsComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,

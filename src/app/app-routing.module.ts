@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './common/home/home.component';
+import { SignInComponent } from './common/sign-in/sign-in.component';
+import { SignUpComponent } from './common/sign-up/sign-up.component';
 
 const routes: Routes = [
-//   {
-//     path: '',
-//     component: QuestionsComponent
-//   },
-//   {
-//     path: 'right',
-//     component: RightComponent
-//   },
-//   {
-//     path: 'wrong',
-//     component: WrongComponent
-//   }
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'sign-in',
+    component: SignInComponent
+  },
+  {
+    path: 'sign-up',
+    component: SignUpComponent
+  }
 ];
 
 @NgModule({

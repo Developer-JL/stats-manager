@@ -12,6 +12,13 @@ import { TeamsComponent } from './teams/teams.component';
 import { TeamComponent } from './team/team.component';
 import { PlayerComponent } from './player/player.component';
 import { PlayersComponent } from './players/players.component';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -28,7 +35,15 @@ import { PlayersComponent } from './players/players.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

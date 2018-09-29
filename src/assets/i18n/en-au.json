@@ -1,0 +1,9 @@
+{
+    "common.welcomeMessage": "Welcome to Stats Manager!",
+    "common.signIn": "Sign In",
+    "common.signUp": "Sign Up",
+    "common.userName": "UserName: ",
+    "common.password": "Password: ",
+    "common.name": "Name: ",
+    "common.email": "Email: "
+}

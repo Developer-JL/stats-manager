@@ -5,5 +5,6 @@
     "common.userName": "UserName: ",
     "common.password": "Password: ",
     "common.name": "Name: ",
-    "common.email": "Email: "
+    "common.email": "Email: ",
+    "common.footer.copyright": "Copyright ©2018 All rights reserved"
 }

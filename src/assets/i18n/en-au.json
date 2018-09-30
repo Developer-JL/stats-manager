@@ -1,5 +1,6 @@
 {
-    "common.welcomeMessage": "Welcome to Stats Manager!",
+    "common.welcomeMessage": "Welcome to Stats Manager",
+    "common.app.description": "Manage your soccer team statistics has never been easier!",
     "common.signIn": "Sign In",
     "common.signUp": "Sign Up",
     "common.userName": "UserName: ",

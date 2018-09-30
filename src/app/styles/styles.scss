@@ -1,0 +1,22 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import './variables';
+
+.padding-top-bottom-md {
+    padding-top: $padding-top-bottom-md;
+    padding-bottom: $padding-top-bottom-md;
+  }
+
+.margin-top-bottom-lg {
+    margin-top: $margin-top-bottom-lg;
+    margin-bottom: $margin-top-bottom-lg;
+  }
+
+.margin-top-xl {
+  margin-top: $margin-top-bottom-xl;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

@@ -1,15 +1,17 @@
-<div>
-    <div>
-        <label translate>common.name</label>
-        <input type="text" name="name">
-      </div>
-  <div>
-    <label translate>common.email</label>
-    <input type="text" name="email">
-  </div>
-  <div>
-    <label translate>common.password</label>
-    <input type="text" name="password">
-  </div>
-  <button (click)="signUpClick()" translate>common.signUp</button>
+<div class="container">
+  <form class="row sign-up-form-wrapper">
+    <div class="form-group">
+      <label for="email" translate>common.email</label>
+      <input type="text" class="form-control" id="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="password" translate>common.password</label>
+      <input type="text" class="form-control" id="password" required>
+    </div>
+
+    <div class="centered">
+      <button type="submit" class="btn btn-success" translate>common.signUp</button>
+    </div>
+  </form>
 </div>

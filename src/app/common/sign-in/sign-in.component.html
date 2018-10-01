@@ -1,11 +1,21 @@
-<div>
-    <div>
-      <label translate>common.userName</label>
-      <input type="text" name="userName">
+<div class="container margin-top-bottom-lg">
+  <h2 class="margin-bottom-md" translate>common.signIn</h2>
+  <form>
+
+    <div class="form-group">
+      <label for="email" translate>common.email</label>
+      <input type="text" class="form-control" id="email" required>
     </div>
-    <div>
-      <label translate>common.password</label>
-      <input type="text" name="password">
+
+    <div class="form-group margin-bottom-xl">
+      <label for="password" translate>common.password</label>
+      <input type="password" class="form-control" id="password" required>
     </div>
-    <button (click)="signInClick()" translate>common.signIn</button>
+
+    <div class="centered">
+      <button class="btn btn-danger margin-right-md" (click)="cancelClick()" translate>common.cancel</button>
+      <button type="submit" class="btn btn-success" translate>common.signIn</button>
+    </div>
+
+  </form>
 </div>

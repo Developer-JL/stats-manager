@@ -17,4 +17,8 @@ export class SignInComponent implements OnInit {
     this.router.navigate(['/teams']);
   }
 
+  public cancelClick(): void {
+    this.router.navigate(['/']);
+  }
+
 }

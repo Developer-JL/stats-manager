@@ -1,3 +1,5 @@
+@import '../../styles/styles';
+
 .header-wrapper {
     display: flex;
     flex-direction: row;
@@ -12,9 +14,4 @@
     background-repeat: no-repeat;
     background-size: contain;
     position: relative;
-}
-
-.header-sign-in-btn {
-    width: 100px;
-    height: 40px;
 }

@@ -6,6 +6,10 @@
     padding-bottom: $padding-top-bottom-md;
   }
 
+.padding-top-sm {
+  padding-top: $padding-sm;
+}
+
 .margin-top-bottom-lg {
     margin-top: $margin-top-bottom-lg;
     margin-bottom: $margin-top-bottom-lg;
@@ -15,8 +19,19 @@
   margin-top: $margin-top-bottom-xl;
 }
 
+.margin-right-md {
+  margin-right: $margin-md;
+}
+
+.margin-sm {
+  margin: $margin-sm;
+}
+
 .centered {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
+
+

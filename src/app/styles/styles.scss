@@ -11,16 +11,24 @@
 }
 
 .margin-top-bottom-lg {
-    margin-top: $margin-top-bottom-lg;
-    margin-bottom: $margin-top-bottom-lg;
+    margin-top: $margin-lg;
+    margin-bottom: $margin-lg;
   }
 
 .margin-top-xl {
-  margin-top: $margin-top-bottom-xl;
+  margin-top: $margin-xl;
 }
 
 .margin-right-md {
   margin-right: $margin-md;
+}
+
+.margin-bottom-md{
+  margin-bottom: $margin-md;
+}
+
+.margin-bottom-xl {
+  margin-bottom: $margin-xl;
 }
 
 .margin-sm {
@@ -28,10 +36,16 @@
 }
 
 .centered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 
 

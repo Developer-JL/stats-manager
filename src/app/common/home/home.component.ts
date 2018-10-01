@@ -13,10 +13,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  public signInClick(): void {
-    this.router.navigate(['/sign-in']);
-  }
-
   public signUpClick(): void {
     this.router.navigate(['/sign-up']);
   }

@@ -1,17 +1,25 @@
-<div class="container">
-  <form class="row sign-up-form-wrapper">
+<div class="container margin-top-bottom-lg">
+  <h2 class="margin-bottom-md" translate>common.signUp</h2>
+  <form>
+    <div class="form-group">
+      <label for="name" translate>common.name</label>
+      <input type="text" class="form-control" id="name" required>
+    </div>
+
     <div class="form-group">
       <label for="email" translate>common.email</label>
       <input type="text" class="form-control" id="email" required>
     </div>
 
-    <div class="form-group">
+    <div class="form-group margin-bottom-xl">
       <label for="password" translate>common.password</label>
       <input type="text" class="form-control" id="password" required>
     </div>
 
     <div class="centered">
+      <button class="btn btn-danger margin-right-md" (click)="cancelClick()" translate>common.cancel</button>
       <button type="submit" class="btn btn-success" translate>common.signUp</button>
     </div>
+    
   </form>
 </div>

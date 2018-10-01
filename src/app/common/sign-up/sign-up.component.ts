@@ -17,4 +17,8 @@ export class SignUpComponent implements OnInit {
     this.router.navigate(['/sign-in']);
   }
 
+  public cancelClick(): void {
+    this.router.navigate(['/']);
+  }
+
 }

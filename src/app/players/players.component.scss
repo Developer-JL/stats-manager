@@ -1,7 +1,8 @@
 @import '../styles/styles';
+@import '../styles/color';
 
 .player-wrapper {
-    background-color: #b8daff;
+    background-color: $list-items-background-color;
     height: 100px;
     width: 500px;
     margin-left: -50px;

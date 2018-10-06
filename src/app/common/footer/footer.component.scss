@@ -1,7 +1,9 @@
+@import '../../styles/color';
+
 .footer-wrapper {
-    background-color: black;
+    background-color: $footer-background-color;
     padding-top: 20px;
     padding-bottom: 35px;
-    color: white;
+    color: $footer-text-color;
     text-align:center;
 }

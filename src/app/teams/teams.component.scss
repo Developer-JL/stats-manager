@@ -1,4 +1,6 @@
 @import '../styles/styles';
+@import '../styles/color';
+
 .player {
     background: url(../../assets/image/soccer-player.png) no-repeat left center;
     background-size: 0.9em 0.9em;
@@ -7,7 +9,7 @@
 }
 
 .team-wrapper {
-    background-color: #b8daff;
+    background-color: $list-items-background-color;
     height: 100px;
     width: 500px;
     margin-left: -50px;

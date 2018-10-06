@@ -1,4 +1,5 @@
 @import '../../styles/styles';
+@import '../../styles/color';
 
 .homepage-wrapper {
     background-image: url(../../../assets/image/homepage.jpg);
@@ -10,5 +11,5 @@
 }
 
 .content-wrapper {
-    color: white;
+    color: $secondary-text-color;
 }

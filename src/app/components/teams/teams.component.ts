@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Team } from '../models/team.model';
 import { Router } from '@angular/router';
+import { Team } from '../../models/team.model';
 
 @Component({
   selector: 'aip-teams',

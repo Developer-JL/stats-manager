@@ -2,20 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './common/header/header.component';
-import { FooterComponent } from './common/footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './common/home/home.component';
-import { SignInComponent } from './common/sign-in/sign-in.component';
-import { SignUpComponent } from './common/sign-up/sign-up.component';
-import { TeamsComponent } from './teams/teams.component';
-import { TeamComponent } from './team/team.component';
-import { PlayerComponent } from './player/player.component';
-import { PlayersComponent } from './players/players.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { TeamsComponent } from './components/teams/teams.component';
+import { TeamComponent } from './components/team/team.component';
+import { PlayerComponent } from './components/player/player.component';
+import { PlayersComponent } from './components/players/players.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);

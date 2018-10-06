@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Player } from '../models/player.model';
+import { Player } from '../../models/player.model';
 
 @Component({
   selector: 'aip-players',

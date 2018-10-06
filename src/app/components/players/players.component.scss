@@ -1,21 +1,14 @@
-@import '../styles/styles';
-@import '../styles/color';
+@import '../../styles/styles';
+@import '../../styles/color';
 
-.player {
-    background: url(../../assets/image/soccer-player.png) no-repeat left center;
-    background-size: 0.9em 0.9em;
-    background-position-y: 2px;
-    padding-left: 20px;
-}
-
-.team-wrapper {
+.player-wrapper {
     background-color: $list-items-background-color;
     height: 100px;
     width: 500px;
     margin-left: -50px;
 }
 
-.create-team-wrapper {
+.create-player-wrapper {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;

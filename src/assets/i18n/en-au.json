@@ -9,5 +9,10 @@
     "common.password": "Password: ",
     "common.name": "Name: ",
     "common.email": "Email: ",
-    "common.footer.copyright": "Copyright ©2018 All rights reserved"
+    "common.teamName": "Tean Name: ",
+    "common.footer.copyright": "Copyright ©2018 All rights reserved",
+    "common.create": "Create",
+    "component.teams.title": "Here is the list of teams you are managing",
+    "component.teams.noTeams": "You currently don't have any teams in your list, please click create button to create one!",
+    "component.teams.numberOfPlayerInTeam": "{{ number }} players"
 }

@@ -2,12 +2,20 @@
 @import './variables';
 
 .padding-top-bottom-md {
-    padding-top: $padding-top-bottom-md;
-    padding-bottom: $padding-top-bottom-md;
+    padding-top: $padding-md;
+    padding-bottom: $padding-md;
   }
 
 .padding-top-sm {
   padding-top: $padding-sm;
+}
+
+.padding-left-sm {
+  padding-left: $padding-sm;
+}
+
+.padding-right-lg {
+  padding-right: $padding-lg;
 }
 
 .margin-top-bottom-lg {
@@ -17,6 +25,10 @@
 
 .margin-top-xl {
   margin-top: $margin-xl;
+}
+
+.margin-right-sm {
+  margin-right: $margin-sm;
 }
 
 .margin-right-md {
@@ -43,6 +55,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+ul {
+  list-style: none;
 }
 
 

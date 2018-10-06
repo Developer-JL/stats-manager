@@ -1,8 +1,25 @@
-<div>
-<h2>
-  There should be a list of teams here!
-</h2>
-<aip-team></aip-team>
-<aip-team></aip-team>
-<aip-team></aip-team>
+<div class="container margin-top-bottom-lg">
+  <div *ngIf="hasTeam">
+    <h2 class="margin-bottom-xl centered" translate>component.teams.title</h2>
+    <div>
+      <ul>
+        <li *ngFor="let team of teams" class="centered">
+          <div class="team-wrapper margin-bottom-xl centered">
+            <span translate>common.teamName</span>
+            <span class="padding-left-sm padding-right-lg">{{team.name}}</span>
+            <span class="player">{{team.players.length}}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 *ngIf="!hasTeam" class="centered margin-bottom-xl" translate>component.teams.noTeams</h2>
+
+  <form class="create-team-wrapper">
+    <label for="team-name" class="margin-right-sm" translate>common.teamName</label>
+    <input type="text" id="team-name" class="margin-right-md" required>
+    <button class="btn btn-success" (click)="createClick()" translate>common.create</button>
+  </form>
+
 </div>

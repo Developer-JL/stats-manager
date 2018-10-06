@@ -1,11 +1,21 @@
-<div>
-    <h2>
-      There should be a list of players here!
-    </h2>
-    <aip-player></aip-player>
-    <aip-player></aip-player>
-    <aip-player></aip-player>
-    <aip-player></aip-player>
-    <aip-player></aip-player>
-    <aip-player></aip-player>
+<div class="container margin-top-bottom-lg">
+  <h2 class="margin-bottom-xl centered">{{teamName}}</h2>
+  <div *ngIf="hasPlayer">
+    <div>
+      <ul>
+        <li *ngFor="let player of players" (click)="onSelect(player)" class="centered">
+          <div class="player-wrapper margin-bottom-xl centered">
+            <img src="../../assets/image/profile-picture.png" alt="profile picture" height="42" width="42">
+            <span class="padding-left-sm padding-right-lg">{{player.name}}</span>
+          </div>
+        </li>
+      </ul>
     </div>
+  </div>
+  <h2 *ngIf="!hasPlayer" class="centered margin-bottom-xl" translate>component.players.noPlayers</h2>
+  <form class="create-player-wrapper">
+    <label for="player-name" class="margin-right-sm" translate>common.playerName</label>
+    <input type="text" id="player-name" class="margin-right-md" required>
+    <button class="btn btn-success" (click)="createClick()" translate>common.create</button>
+  </form>
+</div>

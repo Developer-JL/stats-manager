@@ -1,0 +1,19 @@
+@import '../styles/styles';
+
+.player-wrapper {
+    background-color: #b8daff;
+    height: 100px;
+    width: 500px;
+    margin-left: -50px;
+}
+
+.create-player-wrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

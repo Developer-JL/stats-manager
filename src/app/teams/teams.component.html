@@ -3,7 +3,7 @@
     <h2 class="margin-bottom-xl centered" translate>component.teams.title</h2>
     <div>
       <ul>
-        <li *ngFor="let team of teams" class="centered">
+        <li *ngFor="let team of teams" (click)="onSelect(team)" class="centered">
           <div class="team-wrapper margin-bottom-xl centered">
             <span translate>common.teamName</span>
             <span class="padding-left-sm padding-right-lg">{{team.name}}</span>

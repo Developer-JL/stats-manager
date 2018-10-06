@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Team } from '../models/team.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'aip-teams',
@@ -11,14 +12,14 @@ export class TeamsComponent implements OnInit {
   public teams: Team[];
   public hasTeam: boolean;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.teams = [
-      { name: 'Dynama', players: [{name: 'ABCD'}] },
-      { name: 'Dr IQ', players: [{name: 'ABCD'}, {name: 'ABCD'}] },
+      { name: 'Dynama', players: [{ name: 'ABCD' }] },
+      { name: 'Dr IQ', players: [{ name: 'ABCD' }, { name: 'ABCD' }] },
       { name: 'Magma', players: [] },
-      { name: 'Tornado', players: [{name: 'ABCD'}, {name: 'ABCD'}, {name: 'ABCD'}] }
+      { name: 'Tornado', players: [{ name: 'ABCD' }, { name: 'ABCD' }, { name: 'ABCD' }] }
     ];
 
     this.hasTeam = this.teams && this.teams.length > 0;
@@ -28,5 +29,11 @@ export class TeamsComponent implements OnInit {
     this.teams.push({ name: 'Test', players: [] });
   }
 
+  public onSelect(team: Team): void {
+    this.router.navigate(['/players'], {
+      queryParams: { teamName: team.name },
+      queryParamsHandling: 'merge',
+    });
+  }
 
 }

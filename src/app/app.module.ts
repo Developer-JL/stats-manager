@@ -16,6 +16,7 @@ import { TeamsComponent } from './components/teams/teams.component';
 import { TeamComponent } from './components/team/team.component';
 import { PlayerComponent } from './components/player/player.component';
 import { PlayersComponent } from './components/players/players.component';
+import { FormsModule } from '@angular/forms';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -35,6 +36,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     PlayersComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

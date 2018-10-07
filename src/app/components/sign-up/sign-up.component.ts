@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from '../../models/user.model';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'aip-sign-up',
@@ -8,13 +10,25 @@ import { Router } from '@angular/router';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  public user: User = new User();
+
+  constructor(private router: Router, private auth: AuthService) { }
 
   ngOnInit() {
   }
 
   public signUpClick(): void {
-    this.router.navigate(['/sign-in']);
+
+    this.auth.signUp(this.user).subscribe((res) => {
+      if (res.status === 201) {
+        this.router.navigate(['/sign-in']);
+      }
+    }, (err) => {
+      if (err.status === 409) {
+        window.alert('This email is already registered please choose another one or login!');
+      }
+      console.error(err);
+    });
   }
 
   public cancelClick(): void {

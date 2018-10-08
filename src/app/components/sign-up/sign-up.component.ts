@@ -19,7 +19,7 @@ export class SignUpComponent implements OnInit {
 
   public signUpClick(): void {
 
-    this.auth.signUp(this.user).subscribe((res) => {
+    this.auth.signup(this.user).subscribe((res) => {
       if (res.status === 201) {
         this.router.navigate(['/sign-in']);
       }

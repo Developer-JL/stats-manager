@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth/auth.service';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'aip-sign-in',
@@ -8,13 +10,24 @@ import { Router } from '@angular/router';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  public user: User = new User();
+  
+  constructor(private router: Router, private auth: AuthService) { }
 
   ngOnInit() {
   }
 
   public signInClick(): void {
-    this.router.navigate(['/teams']);
+
+    this.auth.signin(this.user).subscribe((res) => {
+      if (res.status === 200) {
+        this.router.navigate(['/teams']);
+      }
+    }, (err) => {
+      window.alert('Incorrect Login details!');
+      console.error(err);
+    });
+
   }
 
   public cancelClick(): void {

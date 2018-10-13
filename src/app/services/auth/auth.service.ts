@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../../models/user.model';
 import { Observable } from 'rxjs';
@@ -12,13 +12,22 @@ const signinUrl = 'http://localhost:5000/api/user/signin';
 
 export class AuthService {
 
+  @Output() loginStatus: EventEmitter<boolean> = new EventEmitter();
+
+  private isLoggedIn: boolean = false;
+
   constructor(private http: HttpClient) { }
 
-signup(user: User): Observable<any> {
-  return this.http.post<User>(signupUrl, user, {observe: 'response'});
-}
+  public signup(user: User): Observable<any> {
+    return this.http.post<User>(signupUrl, user, { observe: 'response' });
+  }
 
-signin(user: User): Observable<any> {
-  return this.http.post<User>(signinUrl, user, {observe: 'response'});
-}
+  public signin(user: User): Observable<any> {
+    return this.http.post<User>(signinUrl, user, { observe: 'response' });
+  }
+
+  public changeLoginStatus(): void {
+    this.isLoggedIn = !this.isLoggedIn;
+    this.loginStatus.emit(this.isLoggedIn);
+  }
 }

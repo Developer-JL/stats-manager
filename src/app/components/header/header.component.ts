@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthGuardService } from '../../services/auth-guard/auth-guard.service';
-import { TeamService } from '../../services/team/team.service';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'aip-header',
@@ -10,15 +9,16 @@ import { TeamService } from '../../services/team/team.service';
 })
 export class HeaderComponent implements OnInit {
 
-  public isLoggedIn: any;
+  public isLoggedIn;
 
-  constructor(private router: Router, private some: AuthGuardService, private service: TeamService) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
-    this.service.change.subscribe(isOpen => {
-      this.isLoggedIn = isOpen;
+
+    this.authService.loginStatus.subscribe(isLoggedIn => {
+      this.isLoggedIn = isLoggedIn;
     });
-;
+
   }
 
   public signInClick(): void {
@@ -27,8 +27,7 @@ export class HeaderComponent implements OnInit {
 
   public signOutClick(): void {
     localStorage.removeItem('userId');
-    // this.isLoggedIn = false;
-    this.service.toggle();
+    this.authService.changeLoginStatus();
     this.router.navigate(['/']);
   }
 

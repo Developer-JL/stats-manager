@@ -5,6 +5,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { TeamsComponent } from './components/teams/teams.component';
 import { PlayersComponent } from './components/players/players.component';
+import { AuthGuardService } from './services/auth-guard/auth-guard.service';
 
 
 const routes: Routes = [
@@ -22,11 +23,13 @@ const routes: Routes = [
   },
   {
     path: 'teams',
-    component: TeamsComponent
+    component: TeamsComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'players',
-    component: PlayersComponent
+    component: PlayersComponent,
+    canActivate: [AuthGuardService]
   }
 ];
 

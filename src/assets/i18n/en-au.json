@@ -2,6 +2,7 @@
     "common.welcomeMessage": "Welcome to Stats Manager",
     "common.app.description": "Manage your soccer team statistics has never been easier!",
     "common.signIn": "Sign In",
+    "common.signOut": "Sign Out",
     "common.signUp": "Sign Up",
     "common.signUpNow": "Sign Up Now",
     "common.cancel": "Cancel",
@@ -16,5 +17,6 @@
     "component.teams.title": "Here is the list of teams you are managing",
     "component.teams.noTeams": "You currently don't have any teams in your list, please click create button to create one!",
     "component.teams.numberOfPlayerInTeam": "{{ number }} players",
-    "component.players.noPlayers": "You currently don't have any players in your team, please click create button to create one!"
+    "component.players.noPlayers": "You currently don't have any players in your team, please click create button to create one!",
+    "component.players.goBackBtn.text": "< Go back to list of teams"
 }

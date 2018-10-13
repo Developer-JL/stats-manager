@@ -16,10 +16,13 @@
 
   <h2 *ngIf="!hasTeam" class="centered margin-bottom-xl" translate>component.teams.noTeams</h2>
 
-  <form class="create-team-wrapper">
+  <form (ngSubmit)="createClick()" #createTeamForm="ngForm" class="create-team-wrapper">
+    <div [hidden]="teamName.valid || teamName.pristine" class="alert alert-danger">
+      Team name must only contain letters and numbers, and at least 1 character!
+    </div>
     <label for="team-name" class="margin-right-sm" translate>common.teamName</label>
-    <input type="text" id="team-name" class="margin-right-md" required>
-    <button class="btn btn-success" (click)="createClick()" translate>common.create</button>
+    <input type="text" id="team-name" class="margin-right-md" pattern="[A-Za-z0-9]{1,}" required [(ngModel)]="team.name" name="name" #teamName="ngModel">
+    <button type="submit" [disabled]="!createTeamForm.form.valid" class="btn btn-success" translate>common.create</button>
   </form>
 
 </div>

@@ -15,6 +15,10 @@ export class SignUpComponent implements OnInit {
   constructor(private router: Router, private auth: AuthService) { }
 
   ngOnInit() {
+    //     this.user.teams = [
+    //   {name: 'TestA', players: [{ name: 'PlayerA'}] },
+    //   {name: 'TestB', players: [{ name: 'PlayerA'}, {name: 'PlayerB'}] }
+    // ]
   }
 
   public signUpClick(): void {

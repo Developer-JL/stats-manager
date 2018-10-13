@@ -1,6 +1,6 @@
 import { Player } from "./player.model";
 
 export class Team {
-    name: string;
+    name?: string;
     players?: Player[];
 }

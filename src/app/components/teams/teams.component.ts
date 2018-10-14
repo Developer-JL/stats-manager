@@ -21,41 +21,38 @@ export class TeamsComponent implements OnInit {
   constructor(private router: Router, private userService: UserService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-
     this.activatedRoute.queryParams.subscribe(
       (params: Params) => {
         this.userId = params['userId'];
-
-        this.userService.getUserById(this.userId).subscribe((user) => {
-          this.user = user;
-          this.teams = user.teams;
-          this.hasTeam = this.teams && this.teams.length > 0;
-        });
+        
+        // Ininial the teams list
+        this.updateTeamList();
       }
     );
-
-
   }
 
+  // Create a new team and update the team list
   public createClick(): void {
-
     this.user.teams.push(this.team);
-
-    this.userService.update(this.user).subscribe((user) => {
-      console.log(this.user);
-      this.userService.getUserById(this.userId).subscribe((user) => {
-        this.user = user;
-        this.teams = user.teams;
-        this.hasTeam = this.teams && this.teams.length > 0;
-      });
+    this.userService.update(this.user).subscribe(() => {
+      this.updateTeamList();
     });
-
   }
 
+  // Navigate to the seleceted team team-page
   public onSelect(team: Team): void {
     this.router.navigate(['/players'], {
       queryParams: { teamName: team.name, userId: this.userId },
       queryParamsHandling: 'merge',
+    });
+  }
+
+  // Update the team list
+  private updateTeamList(): void {
+    this.userService.getUserById(this.userId).subscribe((user) => {
+      this.user = user;
+      this.teams = user.teams;
+      this.hasTeam = this.teams && this.teams.length > 0;
     });
   }
 

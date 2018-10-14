@@ -29,38 +29,33 @@ export class PlayersComponent implements OnInit {
       (params: Params) => {
         this.teamName = params['teamName'];
         this.userId = params['userId'];
-
-        this.userService.getUserById(this.userId).subscribe((user) => {
-          this.user = user;
-          this.team = user.teams.find((team) => { return team.name === this.teamName });
-          this.players = this.team.players;
-          this.hasPlayer = this.players && this.players.length > 0;
-        });
-
+        this.updatePlayerList();
       }
     );
   }
 
+  // Navigate to the teams page
   public goBackClick(): void {
     this.location.back();
   }
 
+  // Create a new player and update the player list
   public createClick(): void {
-
     this.team.players.push(this.player);
-
     const index = this.user.teams.map(team => { return team.name; }).indexOf(this.teamName);
-
     this.user.teams[index] = this.team;
+    this.userService.update(this.user).subscribe(() => {
+      this.updatePlayerList();
+    });
+  }
 
-
-    this.userService.update(this.user).subscribe((user) => {
-      this.userService.getUserById(this.userId).subscribe((user) => {
-        this.user = user;
-        this.team = user.teams.find((team) => { return team.name === this.teamName });
-        this.players = this.team.players;
-        this.hasPlayer = this.players && this.players.length > 0;
-      });
+  // Update the player list
+  private updatePlayerList(): void {
+    this.userService.getUserById(this.userId).subscribe((user) => {
+      this.user = user;
+      this.team = user.teams.find((team) => { return team.name === this.teamName });
+      this.players = this.team.players;
+      this.hasPlayer = this.players && this.players.length > 0;
     });
   }
 

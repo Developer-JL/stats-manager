@@ -18,8 +18,8 @@ export class SignInComponent implements OnInit {
   ngOnInit() { }
 
   public signInClick(): void {
-
     this.authService.signin(this.user).subscribe((res) => {
+      // If login success, navigate to teams page
       if (res.status === 200) {
         localStorage.setItem('userId', res.body.userId);
         this.authService.changeLoginStatus();
@@ -29,15 +29,15 @@ export class SignInComponent implements OnInit {
         });
       }
     }, (err) => {
+      // If login unsuccess, display the error message
       const message: string = this.translateService.instant('common.IncorrectLogin.text');
       window.alert(message);
       console.error(err);
     });
-
   }
 
+  // Navigate to home page
   public cancelClick(): void {
     this.router.navigate(['/']);
   }
-
 }

@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  // Navigate to sign up page
   public signUpClick(): void {
     this.router.navigate(['/sign-up']);
   }

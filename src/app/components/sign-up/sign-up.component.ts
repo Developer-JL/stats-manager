@@ -20,10 +20,12 @@ export class SignUpComponent implements OnInit {
   public signUpClick(): void {
 
     this.auth.signup(this.user).subscribe((res) => {
+      // If sign up success, navigate to sign in page
       if (res.status === 201) {
         this.router.navigate(['/sign-in']);
       }
     }, (err) => {
+      // If the email already exists, display the error message
       if (err.status === 409) {
         const message: string = this.translateService.instant('common.emailExists.text');
         window.alert(message);
@@ -32,6 +34,7 @@ export class SignUpComponent implements OnInit {
     });
   }
 
+  // Navigate back to home page
   public cancelClick(): void {
     this.router.navigate(['/']);
   }

@@ -1,5 +1,8 @@
 <div class="container margin-top-bottom-lg">
+
   <h2 class="margin-bottom-xl centered">{{teamName}}</h2>
+
+  <!-- players list -->
   <div *ngIf="hasPlayer">
     <div>
       <ul>
@@ -12,7 +15,10 @@
       </ul>
     </div>
   </div>
+
   <h2 *ngIf="!hasPlayer" class="centered margin-bottom-xl" translate>component.players.noPlayers</h2>
+
+  <!-- create play form -->
   <form (ngSubmit)="createClick()" #createPlayerForm="ngForm" class="create-player-wrapper">
     <div [hidden]="playerName.valid || playerName.pristine" class="alert alert-danger" translate>
       component.players.playerNameRequirement.text
@@ -21,5 +27,7 @@
     <input type="text" id="player-name" class="margin-right-md" pattern="[A-Za-z0-9]{1,}" required [(ngModel)]="player.name" name="name" #playerName="ngModel">
     <button type="submit" [disabled]="!createPlayerForm.form.valid" class="btn btn-success" translate>common.create</button>
   </form>
+
   <button type="button" class="btn btn-primary" (click)="goBackClick()" translate>component.players.goBackBtn.text</button>
+
 </div>

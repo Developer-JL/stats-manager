@@ -1,4 +1,6 @@
 <div class="container margin-top-bottom-lg">
+
+  <!-- Teams list -->
   <div *ngIf="hasTeam">
     <h2 class="margin-bottom-xl centered" translate>component.teams.title</h2>
     <div>
@@ -16,6 +18,7 @@
 
   <h2 *ngIf="!hasTeam" class="centered margin-bottom-xl" translate>component.teams.noTeams</h2>
 
+  <!-- Create new team form -->
   <form (ngSubmit)="createClick()" #createTeamForm="ngForm" class="create-team-wrapper">
     <div [hidden]="teamName.valid || teamName.pristine" class="alert alert-danger" translate>
       component.teams.teamNameRequirement.text

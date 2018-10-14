@@ -12,10 +12,12 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  // Call the server to get an existing user by user id
   public getUserById(userId:string): Observable<any> {
     return this.http.get<User>(userBaseUrl + userId);
   }
 
+  // Call the server to update an existing user
   public update(user: User): Observable<any> {
     return this.http.put<User>(userBaseUrl, user);
   }

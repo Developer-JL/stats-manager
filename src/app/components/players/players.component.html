@@ -14,8 +14,8 @@
   </div>
   <h2 *ngIf="!hasPlayer" class="centered margin-bottom-xl" translate>component.players.noPlayers</h2>
   <form (ngSubmit)="createClick()" #createPlayerForm="ngForm" class="create-player-wrapper">
-    <div [hidden]="playerName.valid || playerName.pristine" class="alert alert-danger">
-      Player name must only contain letters and numbers, and at least 1 character!
+    <div [hidden]="playerName.valid || playerName.pristine" class="alert alert-danger" translate>
+      component.players.playerNameRequirement.text
     </div>
     <label for="player-name" class="margin-right-sm" translate>common.playerName</label>
     <input type="text" id="player-name" class="margin-right-md" pattern="[A-Za-z0-9]{1,}" required [(ngModel)]="player.name" name="name" #playerName="ngModel">

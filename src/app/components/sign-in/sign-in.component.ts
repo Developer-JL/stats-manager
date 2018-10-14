@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
 import { User } from '../../models/user.model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'aip-sign-in',
@@ -12,7 +13,7 @@ export class SignInComponent implements OnInit {
 
   public user: User = new User();
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService, private translateService: TranslateService) { }
 
   ngOnInit() { }
 
@@ -28,7 +29,8 @@ export class SignInComponent implements OnInit {
         });
       }
     }, (err) => {
-      window.alert('Incorrect Login details!');
+      const message: string = this.translateService.instant('common.IncorrectLogin.text');
+      window.alert(message);
       console.error(err);
     });
 

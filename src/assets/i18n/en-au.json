@@ -14,9 +14,15 @@
     "common.playerName": "Player Name: ",
     "common.footer.copyright": "Copyright ©2018 All rights reserved",
     "common.create": "Create",
+    "common.emailRequirement.text": "Correct Email is required!",
+    "common.passwordRequirement.text": "Password must only contain letters and numbers, and at least 6 characters!",
+    "common.IncorrectLogin.text": "Incorrect Login details!",
+    "common.emailExists.text": "This email is already registered please choose another one or login!",
     "component.teams.title": "Here is the list of teams you are managing",
     "component.teams.noTeams": "You currently don't have any teams in your list, please click create button to create one!",
     "component.teams.numberOfPlayerInTeam": "{{ number }} players",
+    "component.teams.teamNameRequirement.text": "Team name must only contain letters and numbers, and at least 1 character!",
     "component.players.noPlayers": "You currently don't have any players in your team, please click create button to create one!",
-    "component.players.goBackBtn.text": "< Go back to list of teams"
+    "component.players.goBackBtn.text": "< Go back to list of teams",
+    "component.players.playerNameRequirement.text": "Player name must only contain letters and numbers, and at least 1 character!"
 }

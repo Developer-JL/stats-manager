@@ -17,8 +17,8 @@
   <h2 *ngIf="!hasTeam" class="centered margin-bottom-xl" translate>component.teams.noTeams</h2>
 
   <form (ngSubmit)="createClick()" #createTeamForm="ngForm" class="create-team-wrapper">
-    <div [hidden]="teamName.valid || teamName.pristine" class="alert alert-danger">
-      Team name must only contain letters and numbers, and at least 1 character!
+    <div [hidden]="teamName.valid || teamName.pristine" class="alert alert-danger" translate>
+      component.teams.teamNameRequirement.text
     </div>
     <label for="team-name" class="margin-right-sm" translate>common.teamName</label>
     <input type="text" id="team-name" class="margin-right-md" pattern="[A-Za-z0-9]{1,}" required [(ngModel)]="team.name" name="name" #teamName="ngModel">

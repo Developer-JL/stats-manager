@@ -12,7 +12,31 @@ describe('AuthService', () => {
     });
   });
 
-  it('should be created', inject([AuthService], (service: AuthService) => {
-    expect(service).toBeTruthy();
+  let service: AuthService;
+
+  beforeEach(inject([AuthService], _authService => {
+    service = _authService;
   }));
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+
+
+  it('loginStatus should be changed when changeLoginStatus() is being called', () => {
+
+    let isLoggedIn: boolean;
+
+    service.loginStatus.subscribe(result => {
+      isLoggedIn = result;
+    });
+
+    expect(isLoggedIn).toBeFalsy();
+
+    service.changeLoginStatus();
+
+    expect(isLoggedIn).toBeTruthy();
+  });
+
+
 });

@@ -12,7 +12,24 @@ describe('RouteGuardService', () => {
     });
   });
 
-  it('should be created', inject([RouteGuardService], (service: RouteGuardService) => {
-    expect(service).toBeTruthy();
+  let service: RouteGuardService;
+
+  beforeEach(inject([RouteGuardService], _routeGuardService => {
+    service = _routeGuardService;
   }));
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+
+  it('canActivate should be changed when user id exists', () => {
+
+    localStorage.setItem('userId', 'testId');
+
+    expect(service.canActivate()).toBeTruthy();
+    
+    localStorage.removeItem('userId');
+
+    expect(service.canActivate()).toBeFalsy();
+  });  
 });

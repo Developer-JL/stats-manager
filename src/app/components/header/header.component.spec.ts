@@ -20,24 +20,18 @@ describe('HeaderComponent', () => {
       .compileComponents();
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
   let router: Router;
 
   beforeEach(inject(
     [],
     () => {
+      fixture = TestBed.createComponent(HeaderComponent);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
       router = TestBed.get(Router);
+      spyOn(router, 'navigate');
     }
   ));
-
-  beforeEach(() => {
-    spyOn(router, 'navigate');
-  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

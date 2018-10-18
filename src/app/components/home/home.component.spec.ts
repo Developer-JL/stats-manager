@@ -18,17 +18,14 @@ describe('HomeComponent', () => {
     .compileComponents();
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
   let router: Router;
 
   beforeEach(inject(
     [],
     () => {
+      fixture = TestBed.createComponent(HomeComponent);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
       router = TestBed.get(Router);
     }
   ));
